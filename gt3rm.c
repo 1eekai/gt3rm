@@ -1,17 +1,19 @@
-//  This file is part of GT3rm.
+/* 
+*  This file is part of GT3rm.
 
-//  GT3rm is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
+*  GT3rm is free software: you can redistribute it and/or modify
+*  it under the terms of the GNU General Public License as published by
+*  the Free Software Foundation, either version 3 of the License, or
+*  (at your option) any later version.
 
-//  GT3rm is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
+*  GT3rm is distributed in the hope that it will be useful,
+*  but WITHOUT ANY WARRANTY; without even the implied warranty of
+*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*  GNU General Public License for more details.
 
-//  You should have received a copy of the GNU General Public License
-//  along with GT3rm.  If not, see <http://www.gnu.org/licenses/>.
+*  You should have received a copy of the GNU General Public License
+*  along with GT3rm.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 #include <stdio.h>
 #include <unistd.h>
@@ -46,10 +48,10 @@ int main(int argc, char** argv){
 		version();
 		return 0;
 	}
-	if (findStrInTheMatrix(argv,"-e")==65535 || findStrInTheMatrix(argv,"-t")==65535){
+	if (findStrInTheMatrix(argv,"-e")==65535 || findStrInTheMatrix(argv,"-t")==65535){ 
 		fprintf(stderr,
 			"%s\n",
-			"You need to pass an valid arguments."
+			"You need to pass an valid arguments." /* test if user gives the -t or -e arguments. If not, the program will exit. */
 			);
 		return 1;
 	}
@@ -64,7 +66,7 @@ int main(int argc, char** argv){
 	if (passcmd==NULL){
 		fprintf(stderr,
 			"%s",
-			"Memory low. Exiting."
+			"Memory low. Exiting." 
 			);
 		return 1;
 	}
