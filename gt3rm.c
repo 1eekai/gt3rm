@@ -15,12 +15,14 @@
 *  along with GT3rm.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/* final edit by 1eekai, Jan.21st, 2014   */
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
 
-int findStrInTheMatrix(char** matrix, char* array){
+int findStrInTheMatrix(char** matrix, char* array){       /* find the string in the 2D char array. This function was used to search the user's arguments.  */
 	int num=0;
 	while (matrix[num]!=0){
 		if (strcmp(matrix[num],array)==0)	return num;
@@ -43,7 +45,7 @@ void version(void){
 int main(int argc, char** argv){
 	char* passcmd;
 	int counter;
-	int longs_of_execute=0;
+	int longs_of_execute=0;   /* shows how long did user gives with the parameters. The program will allocate the memory by this.  */
 	if (findStrInTheMatrix(argv,"--version")!=65535){
 		version();
 		return 0;
@@ -65,7 +67,7 @@ int main(int argc, char** argv){
 	passcmd=(char *)malloc(sizeof(char)*longs_of_execute);
 	if (passcmd==NULL){
 		fprintf(stderr,
-			"%s",
+			"%s",			/* Set this to set the fail-safe of memory alloctaion in case of failure */
 			"Memory low. Exiting." 
 			);
 		return 1;
